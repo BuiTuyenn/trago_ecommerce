@@ -1,0 +1,190 @@
+/* ========================================
+   CATEGORIES SIDEBAR COMPONENT
+   ======================================== */
+
+.categories-sidebar {
+    background: var(--trego-white);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    max-height: calc(100vh - 120px); /* Adjust based on header height */
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 20px; /* Distance from top when sticky */
+    z-index: 10;
+}
+
+.categories-menu {
+    padding: 0;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+    /* Hide scrollbar for Webkit browsers (Chrome, Safari, Edge) */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.categories-menu::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Webkit browsers */
+}
+
+/* Add smooth scrolling */
+.categories-menu {
+    scroll-behavior: smooth;
+}
+
+.categories-title {
+    background: linear-gradient(135deg, var(--trego-primary) 0%, var(--trego-primary-dark) 100%);
+    color: white;
+    padding: 1rem;
+    margin: 0;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-list li {
+    border-bottom: 1px solid var(--trego-gray-200);
+}
+
+.category-list li:last-child {
+    border-bottom: none;
+}
+
+.category-list a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    color: var(--trego-gray-700);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.category-list a:hover {
+    background-color: var(--trego-primary-light);
+    color: var(--trego-primary);
+    padding-left: 1.25rem;
+}
+
+/* Add scroll indicator when content overflows */
+.categories-menu::before {
+    content: '';
+    position: sticky;
+    top: 0;
+    height: 10px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.9), transparent);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.categories-menu::after {
+    content: '';
+    position: sticky;
+    bottom: 0;
+    height: 10px;
+    background: linear-gradient(to top, rgba(255,255,255,0.9), transparent);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Show subtle scroll hint on hover */
+.categories-sidebar:hover .categories-menu::-webkit-scrollbar {
+    display: block;
+    width: 4px;
+}
+
+.categories-sidebar:hover .categories-menu::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.05);
+    border-radius: 2px;
+}
+
+.categories-sidebar:hover .categories-menu::-webkit-scrollbar-thumb {
+    background: var(--trego-primary);
+    border-radius: 2px;
+    opacity: 0.7;
+}
+
+.categories-sidebar:hover .categories-menu::-webkit-scrollbar-thumb:hover {
+    background: var(--trego-primary-dark);
+    opacity: 1;
+}
+
+.category-list a i {
+    width: 20px;
+    margin-right: 0.75rem;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+/* Scroll indicators */
+.categories-sidebar.scroll-top .categories-menu::before {
+    opacity: 1;
+}
+
+.categories-sidebar.scroll-bottom .categories-menu::after {
+    opacity: 1;
+}
+
+.categories-sidebar:not(.scrollable) .categories-menu::before,
+.categories-sidebar:not(.scrollable) .categories-menu::after {
+    display: none;
+}
+
+/* Enhanced focus styles for keyboard navigation */
+.category-list a:focus {
+    outline: 2px solid var(--trego-primary);
+    outline-offset: -2px;
+    background-color: var(--trego-primary-light);
+    color: var(--trego-primary-dark);
+}
+
+/* Smooth transitions for all interactive elements */
+.category-list a,
+.categories-menu::before,
+.categories-menu::after {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Touch-friendly adjustments */
+@media (hover: none) and (pointer: coarse) {
+    .category-list a {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    .categories-sidebar:hover .categories-menu::-webkit-scrollbar {
+        display: none; /* Keep hidden on touch devices */
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .categories-sidebar {
+        margin-bottom: 1rem;
+        max-height: 400px; /* Reduce height on smaller screens */
+    }
+}
+
+@media (max-width: 767.98px) {
+    .categories-title {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+    }
+    
+    .category-list a {
+        padding: 0.6rem 0.75rem;
+        font-size: 0.85rem;
+    }
+    
+    .category-list a:hover {
+        padding-left: 1rem;
+    }
+}

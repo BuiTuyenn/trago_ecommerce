@@ -1,0 +1,795 @@
+/* ============================================
+   TREGO E-COMMERCE THEME STYLES
+   ============================================ */
+
+/* ============================================
+   COLOR VARIABLES
+   ============================================ */
+:root {
+    --trego-primary: #007bff;
+    --trego-primary-dark: #0056b3;
+    --trego-primary-light: #e3f2fd;
+    --trego-secondary: #6c757d;
+    --trego-success: #28a745;
+    --trego-danger: #dc3545;
+    --trego-warning: #ffc107;
+    --trego-info: #17a2b8;
+    --trego-light: #f8f9fa;
+    --trego-dark: #343a40;
+    --trego-white: #ffffff;
+    --trego-gray-100: #f8f9fa;
+    --trego-gray-200: #e9ecef;
+    --trego-gray-300: #dee2e6;
+    --trego-gray-400: #ced4da;
+    --trego-gray-500: #adb5bd;
+    --trego-gray-600: #6c757d;
+    --trego-gray-700: #495057;
+    --trego-gray-800: #343a40;
+    --trego-gray-900: #212529;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.text-trego-primary { color: var(--trego-primary) !important; }
+.text-trego-secondary { color: var(--trego-secondary) !important; }
+.bg-trego-primary { background-color: var(--trego-primary) !important; }
+.bg-trego-light { background-color: var(--trego-light) !important; }
+.border-trego-primary { border-color: var(--trego-primary) !important; }
+
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+.btn-trego-primary {
+    background-color: var(--trego-primary);
+    border-color: var(--trego-primary);
+    color: var(--trego-white);
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn-trego-primary:hover {
+    background-color: var(--trego-primary-dark);
+    border-color: var(--trego-primary-dark);
+    color: var(--trego-white);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.btn-outline-trego-primary {
+    color: var(--trego-primary);
+    border-color: var(--trego-primary);
+    background-color: transparent;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-trego-primary:hover {
+    background-color: var(--trego-primary);
+    border-color: var(--trego-primary);
+    color: var(--trego-white);
+}
+
+/* ============================================
+   HEADER STYLES
+   ============================================ */
+.trego-homepage {
+    background-color: var(--trego-light);
+    min-height: 100vh;
+}
+
+.top-header-bar {
+    background: linear-gradient(135deg, var(--trego-primary) 0%, var(--trego-primary-dark) 100%);
+    color: var(--trego-white);
+    font-size: 0.875rem;
+}
+
+.main-header-bar {
+    border-bottom: 1px solid var(--trego-gray-200);
+}
+
+.main-header-bar .row {
+    align-items: center;
+}
+
+.main-header-bar .py-3 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+/* Brand Text Styles */
+.trego-brand-text {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--trego-primary);
+    text-decoration: none;
+    letter-spacing: -0.03em;
+    font-family: 'Arial Black', 'Arial', sans-serif;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--trego-primary) 0%, #1e40af 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.trego-brand-text:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #1e40af 0%, var(--trego-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Đảm bảo container brand text cũng trong suốt */
+.navbar-brand, 
+.navbar-brand:hover,
+.navbar-brand:focus {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Responsive brand text adjustments */
+@media (max-width: 991.98px) {
+    .trego-brand-text {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .trego-brand-text {
+        font-size: 2rem;
+    }
+}
+
+/* Search Bar Styles */
+.trego-search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--trego-gray-100);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trego-search-input {
+    border: none;
+    background: transparent;
+    padding: 12px 20px;
+    font-size: 1rem;
+    flex: 1;
+}
+
+.trego-search-input:focus {
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+.trego-search-btn {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 0 25px 25px 0;
+    font-weight: 500;
+}
+
+/* User Icon Styles */
+.trego-user-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--trego-gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--trego-primary);
+    font-size: 1.2rem;
+}
+
+/* Cart Icon Styles */
+.trego-cart-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--trego-gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--trego-primary);
+    font-size: 1.2rem;
+}
+
+.trego-cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--trego-danger);
+    color: var(--trego-white);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* Categories Sidebar moved to components/home/categories-sidebar.css */
+
+/* ============================================
+   MAIN CONTENT AREA
+   ============================================ */
+.main-layout {
+    background-color: var(--trego-light);
+    padding: 20px 0;
+}
+
+/* Hero Banner */
+.hero-banner-section {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.banner-gradient {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-caption {
+    position: static !important;
+    padding: 0;
+    color: inherit;
+}
+
+/* Service Features */
+.service-features {
+    background-color: var(--trego-white);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.feature-item {
+    padding: 10px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.feature-item:hover {
+    transform: translateY(-3px);
+    background-color: var(--trego-primary-light);
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--trego-primary) 0%, var(--trego-primary-dark) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: var(--trego-white);
+    font-size: 1.3rem;
+}
+
+.feature-text {
+    font-weight: 600;
+    color: var(--trego-gray-800);
+    display: block;
+    margin-bottom: 2px;
+}
+
+.feature-subtitle {
+    font-size: 0.75rem;
+    color: var(--trego-gray-500);
+    font-weight: 500;
+}
+
+/* Service Icons */
+.service-icons-row {
+    background-color: var(--trego-white);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon-card {
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.service-icon-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--trego-primary) 0%, var(--trego-primary-dark) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: var(--trego-white);
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.service-icon-card small {
+    font-weight: 500;
+    color: var(--trego-gray-700);
+}
+
+/* ============================================
+   PRODUCT SECTIONS
+   ============================================ */
+.deals-section {
+    background-color: var(--trego-white);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+    border-bottom: 1px solid var(--trego-gray-200);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Modern Product Cards */
+.product-card-modern {
+    background-color: var(--trego-white);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--trego-gray-100);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.product-card-modern:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--trego-primary);
+}
+
+.product-image-container {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+    background-color: var(--trego-gray-50);
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card-modern:hover .product-image {
+    transform: scale(1.05);
+}
+
+/* Product Badges */
+.discount-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: linear-gradient(135deg, var(--trego-danger) 0%, #c82333 100%);
+    color: var(--trego-white);
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    z-index: 2;
+}
+
+.hot-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: linear-gradient(135deg, var(--trego-warning) 0%, #e0a800 100%);
+    color: var(--trego-dark);
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    z-index: 2;
+}
+
+/* Product Details */
+.product-details {
+    padding: 12px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--trego-gray-800);
+    margin-bottom: 8px;
+    line-height: 1.3;
+    height: 2.6rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.price-info {
+    margin-bottom: 10px;
+    margin-top: auto;
+}
+
+.current-price {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--trego-danger);
+    display: block;
+}
+
+.original-price {
+    font-size: 0.8rem;
+    color: var(--trego-gray-500);
+    text-decoration: line-through;
+    display: block;
+    margin-top: 2px;
+}
+
+.add-to-cart-btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Custom 5-column grid */
+.col-lg-2-4 {
+    flex: 0 0 auto;
+    width: 20%;
+}
+
+@media (max-width: 991.98px) {
+    .col-lg-2-4 {
+        width: 25%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .col-lg-2-4 {
+        width: 33.333333%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .col-lg-2-4 {
+        width: 50%;
+    }
+}
+
+/* Product Card Styles */
+.product-card-trego {
+    background-color: var(--trego-white);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--trego-gray-200);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card-trego:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    border-color: var(--trego-primary);
+}
+
+.product-image-wrapper {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.product-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card-trego:hover .product-image-wrapper img {
+    transform: scale(1.05);
+}
+
+/* Product Badges */
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(135deg, var(--trego-danger) 0%, #c82333 100%);
+    color: var(--trego-white);
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.featured-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, var(--trego-warning) 0%, #e0a800 100%);
+    color: var(--trego-dark);
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.new-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, var(--trego-success) 0%, #1e7e34 100%);
+    color: var(--trego-white);
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+/* Product Info */
+.product-info {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--trego-gray-800);
+    margin-bottom: 10px;
+    line-height: 1.4;
+    height: 2.8rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.price-section {
+    margin-bottom: 15px;
+    margin-top: auto;
+}
+
+.current-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--trego-danger);
+}
+
+.old-price {
+    font-size: 0.9rem;
+    color: var(--trego-gray-500);
+    text-decoration: line-through;
+    margin-left: 8px;
+}
+
+.product-actions .btn {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Mobile Styles */
+@media (max-width: 767.98px) {
+    /* Categories sidebar responsive moved to components/home/categories-sidebar.css */
+    
+    .main-layout {
+        padding: 10px 0;
+    }
+    
+    .hero-banner-section .banner-gradient {
+        height: 200px !important;
+    }
+    
+    .hero-banner-section h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    .service-features {
+        padding: 15px;
+    }
+    
+    .feature-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    
+    .feature-text {
+        font-size: 0.8rem;
+    }
+    
+    .feature-subtitle {
+        font-size: 0.7rem;
+    }
+    
+    .section-title {
+        font-size: 1.1rem;
+    }
+    
+    .product-card-modern {
+        margin-bottom: 15px;
+    }
+    
+    .product-image-container {
+        height: 140px;
+    }
+    
+    .product-title {
+        font-size: 0.8rem;
+        height: 2.4rem;
+    }
+    
+    .current-price {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .sidebar-categories {
+        margin-right: 10px;
+    }
+    
+    .main-content {
+        padding-left: 10px;
+    }
+    
+    .carousel-caption h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1200px) {
+    .container-fluid {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .carousel-caption {
+        bottom: 80px;
+        left: 80px;
+    }
+    
+    .carousel-caption h2 {
+        font-size: 3rem;
+    }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-card-trego {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.service-icon-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Stagger animation for product cards */
+.product-card-trego:nth-child(1) { animation-delay: 0.1s; }
+.product-card-trego:nth-child(2) { animation-delay: 0.2s; }
+.product-card-trego:nth-child(3) { animation-delay: 0.3s; }
+.product-card-trego:nth-child(4) { animation-delay: 0.4s; }
+.product-card-trego:nth-child(5) { animation-delay: 0.5s; }
+
+/* ============================================
+   LOADING STATES
+   ============================================ */
+.loading-skeleton {
+    background: linear-gradient(90deg, var(--trego-gray-200) 25%, var(--trego-gray-100) 50%, var(--trego-gray-200) 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Flash Sale Section moved to components/home/flash-sale.css */
+
+/* Featured Brands Section moved to components/home/featured-brands.css */
+/* Next Buttons moved to components/home/next-buttons.css */
+
+/* Brands responsive styles moved to components/home/featured-brands.css */
+
+/* Hàng ngoại giá hot Section moved to components/home/hang-ngoai-gia-hot.css */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .featured-brands-section {
+        padding: 15px;
+    }
+    
+    .brand-card {
+        width: 240px;
+    }
+    
+    .brand-image-container {
+        height: 120px;
+    }
+    
+    .brand-details {
+        padding: 0.75rem;
+    }
+    
+    .brand-title {
+        font-size: 0.85rem;
+    }
+    
+    .brand-subtitle {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .brand-card {
+        width: 200px;
+    }
+    
+    .brand-image-container {
+        height: 100px;
+    }
+}

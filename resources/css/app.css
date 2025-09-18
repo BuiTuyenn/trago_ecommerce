@@ -1,0 +1,84 @@
+/* ============================================
+   TREGO E-COMMERCE - MAIN CSS FILE
+   E-commerce Platform (TIKI-level scale)
+   ============================================ */
+
+/* ============================================
+   CORE IMPORTS
+   ============================================ */
+@import 'pages/trego.css';
+
+/* ============================================
+   LAYOUT IMPORTS
+   ============================================ */
+@import 'layouts/header/header.css';
+@import 'layouts/footer/footer.css';
+@import 'layouts/app.css';
+
+/* ============================================
+   COMPONENT IMPORTS
+   ============================================ */
+@import 'components/cards.css';
+
+/* Home Page Components */
+@import 'components/home/categories-sidebar.css';
+@import 'components/home/category-icons.css';
+@import 'components/home/top-deal.css';
+@import 'components/home/flash-sale.css';
+@import 'components/home/featured-brands.css';
+@import 'components/home/hang-ngoai-gia-hot.css';
+@import 'components/home/ban-co-the-thich.css';
+@import 'components/home/section-next-buttons.css';
+@import 'components/home/next-buttons.css';
+@import 'components/home/sticky-layout.css';
+
+/* ============================================
+   PAGE IMPORTS
+   ============================================ */
+@import 'pages/home.css';
+@import 'pages/products.css';
+@import 'pages/auth.css';
+
+/* ============================================
+   ADMIN IMPORTS
+   ============================================ */
+@import 'admin/dashboard.css';
+@import 'admin/forms.css';
+
+/* ============================================
+   GLOBAL UTILITIES & OVERRIDES
+   ============================================ */
+
+/* Ensure proper CSS loading order */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* Performance optimizations for large e-commerce site */
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    loading: lazy;
+}
+
+/* Critical above-the-fold optimizations */
+.hero-banner-section,
+.flash-sale-section,
+.deals-section {
+    contain: layout style paint;
+}
+
+/* Include JavaScript components */
+/* Note: Add these to your main layout or specific pages:
+   <script src="{{ asset('js/components/categories-scroll.js') }}"></script>
+   <script src="{{ asset('js/components/home-functions.js') }}"></script>
+*/

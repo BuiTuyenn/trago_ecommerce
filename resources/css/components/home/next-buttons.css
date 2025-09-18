@@ -1,0 +1,68 @@
+/* ========================================
+   UNIVERSAL NEXT BUTTONS COMPONENT
+   ======================================== */
+
+/* Universal Section Next Button */
+.section-next-btn {
+    border: 2px solid #e5e7eb;
+    background: white;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 0.3s ease;
+    color: #6b7280;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-next-btn:hover {
+    background-color: var(--trego-primary);
+    border-color: var(--trego-primary);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+}
+
+.section-next-btn:active {
+    transform: scale(0.95);
+}
+
+.section-next-btn i {
+    font-size: 0.875rem;
+}
+
+/* Specific positioning for different sections */
+.hang-ngoai-next-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(4px);
+}
+
+.hang-ngoai-next-btn:hover {
+    background: var(--trego-primary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    .section-next-btn {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .section-next-btn i {
+        font-size: 0.8rem;
+    }
+    
+    .hang-ngoai-next-btn {
+        right: 10px;
+    }
+}

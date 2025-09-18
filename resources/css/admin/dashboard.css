@@ -1,0 +1,180 @@
+/* ============================================
+   ADMIN DASHBOARD STYLES
+   ============================================ */
+
+.admin-dashboard {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.admin-dashboard .container,
+.admin-dashboard .container-fluid {
+    /* Full width containers */
+}
+
+.admin-dashboard-content {
+    /* Full width content */
+}
+
+.dashboard-stats {
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid #2563eb;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.stat-icon.primary {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+}
+
+.stat-icon.success {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.stat-icon.warning {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+}
+
+.stat-icon.danger {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.dashboard-section {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.section-header {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.table-responsive {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #e5e7eb;
+    font-weight: 600;
+    color: #374151;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.badge {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .admin-dashboard .container,
+    .admin-dashboard .container-fluid {
+        /* Full width on all screens */
+    }
+    
+    .admin-dashboard-content {
+        /* Full width content on all screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-dashboard {
+        /* No padding for mobile */
+    }
+    
+    .admin-dashboard .container,
+    .admin-dashboard .container-fluid {
+        /* No side padding */
+    }
+    
+    .admin-dashboard-content {
+        /* No padding */
+    }
+    
+    .stat-card {
+        margin-bottom: 20px;
+        padding: 20px 15px;
+    }
+    
+    .dashboard-section {
+        padding: 20px 15px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .admin-dashboard {
+        /* No padding for small screens */
+    }
+    
+    .admin-dashboard .container,
+    .admin-dashboard .container-fluid {
+        /* No side padding */
+    }
+    
+    .stat-card {
+        padding: 15px 10px;
+    }
+    
+    .dashboard-section {
+        padding: 15px 10px;
+    }
+}

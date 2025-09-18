@@ -1,0 +1,91 @@
+/* ========================================
+   SECTION NEXT BUTTONS - UNIFIED STYLES
+   ======================================== */
+
+/* Ensure all containers have proper positioning */
+.top-deal-container,
+.flash-sale-container,
+.brands-container,
+.hang-ngoai-container,
+.ban-co-the-thich-container {
+    position: relative !important;
+}
+
+/* Common styles for all section next buttons positioned at content level */
+.top-deal-next-btn,
+.flash-sale-next-btn,
+.brands-next-btn,
+.hang-ngoai-next-btn,
+.ban-co-the-thich-next-btn {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+    z-index: 9999 !important;
+    color: #6b7280;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.top-deal-next-btn:hover,
+.flash-sale-next-btn:hover,
+.brands-next-btn:hover,
+.hang-ngoai-next-btn:hover,
+.ban-co-the-thich-next-btn:hover {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.top-deal-next-btn:active,
+.flash-sale-next-btn:active,
+.brands-next-btn:active,
+.hang-ngoai-next-btn:active,
+.ban-co-the-thich-next-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* Responsive adjustments for next buttons */
+@media (max-width: 767.98px) {
+    .top-deal-next-btn,
+    .flash-sale-next-btn,
+    .brands-next-btn,
+    .hang-ngoai-next-btn,
+    .ban-co-the-thich-next-btn {
+        width: 38px;
+        height: 38px;
+        right: -19px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .top-deal-next-btn,
+    .flash-sale-next-btn,
+    .brands-next-btn,
+    .hang-ngoai-next-btn,
+    .ban-co-the-thich-next-btn {
+        width: 35px;
+        height: 35px;
+        right: -17px;
+    }
+    
+    .top-deal-next-btn i,
+    .flash-sale-next-btn i,
+    .brands-next-btn i,
+    .hang-ngoai-next-btn i,
+    .ban-co-the-thich-next-btn i {
+        font-size: 0.8rem;
+    }
+}

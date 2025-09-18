@@ -1,0 +1,426 @@
+/* ========================================
+   BẠN CÓ THỂ THÍCH COMPONENT
+   ======================================== */
+
+.ban-co-the-thich-section {
+    max-width: 1370px;
+    margin: 10px auto;
+    background-color: var(--trego-white);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.ban-co-the-thich-section .section-header {
+    border-bottom: 1px solid var(--trego-gray-200);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+.ban-co-the-thich-section .section-title {
+    color: var(--trego-dark);
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.ban-co-the-thich-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.ban-co-the-thich-carousel-container {
+    position: relative;
+}
+
+.ban-co-the-thich-carousel {
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+    width: fit-content;
+}
+
+/* Hiển thị tối đa 6 sản phẩm trên một hàng */
+.ban-co-the-thich-carousel-container {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.ban-co-the-thich-carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(to right, transparent, white);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.ban-co-the-thich-product-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #f3f4f6;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 200px;
+}
+
+.ban-co-the-thich-product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--trego-primary);
+}
+
+.ban-co-the-thich-product-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ban-co-the-thich-product-card:hover .ban-co-the-thich-product-image {
+    transform: scale(1.05);
+}
+
+/* Badges */
+.discount-badge-ban-co-the-thich {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #dc2626;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(220, 38, 38, 0.3);
+    z-index: 2;
+}
+
+.gift-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+    z-index: 2;
+}
+
+.bestseller-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);
+    z-index: 2;
+}
+
+.hot-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+    z-index: 2;
+}
+
+.size-badge {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.combo-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.gaming-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: linear-gradient(135deg, #06b6d4, #0891b2);
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.fashion-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: linear-gradient(135deg, #ec4899, #db2777);
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.origin-badge-ban-co-the-thich {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 500;
+    z-index: 2;
+}
+
+.trending-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.ban-co-the-thich-product-details {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ban-co-the-thich-product-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #374151;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 2.6em;
+}
+
+.ban-co-the-thich-product-title:hover {
+    color: var(--trego-primary);
+    cursor: pointer;
+}
+
+.rating-stars {
+    display: flex;
+    gap: 0.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.rating-stars i {
+    font-size: 0.75rem;
+}
+
+.price-container {
+    margin-bottom: 0.5rem;
+}
+
+.current-price {
+    color: #dc2626;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-right: 0.5rem;
+}
+
+.original-price {
+    color: #9ca3af;
+    font-size: 0.85rem;
+    text-decoration: line-through;
+}
+
+.delivery-info {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.delivery-info small {
+    font-size: 0.75rem;
+}
+
+/* Next Button */
+.ban-co-the-thich-next-btn {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--trego-primary);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    transition: all 0.3s ease;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.ban-co-the-thich-next-btn:hover {
+    background: var(--trego-primary-dark);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+.ban-co-the-thich-next-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* Responsive adjustments for Bạn có thể thích Carousel */
+@media (max-width: 1199.98px) {
+    .ban-co-the-thich-product-card {
+        width: 180px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .ban-co-the-thich-product-card {
+        width: 160px;
+    }
+    
+    .ban-co-the-thich-section {
+        padding: 15px;
+    }
+    
+    .ban-co-the-thich-product-image {
+        height: 120px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .ban-co-the-thich-product-card {
+        width: 140px;
+    }
+    
+    .ban-co-the-thich-carousel {
+        gap: 0.75rem;
+    }
+    
+    .ban-co-the-thich-product-details {
+        padding: 0.75rem;
+    }
+    
+    .ban-co-the-thich-product-title {
+        font-size: 0.8rem;
+    }
+    
+    .current-price {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .ban-co-the-thich-product-card {
+        width: 120px;
+    }
+    
+    .ban-co-the-thich-carousel {
+        gap: 0.5rem;
+    }
+    
+    .ban-co-the-thich-section {
+        margin: 5px auto;
+        padding: 12px;
+    }
+    
+    .ban-co-the-thich-product-details {
+        padding: 0.5rem;
+    }
+    
+    .ban-co-the-thich-product-title {
+        font-size: 0.75rem;
+        min-height: 2.2em;
+    }
+    
+    .current-price {
+        font-size: 0.85rem;
+    }
+    
+    .original-price {
+        font-size: 0.75rem;
+    }
+    
+    .rating-stars i {
+        font-size: 0.7rem;
+    }
+}
+
+/* Animation Effects */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ban-co-the-thich-product-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.ban-co-the-thich-product-card:nth-child(1) { animation-delay: 0.1s; }
+.ban-co-the-thich-product-card:nth-child(2) { animation-delay: 0.2s; }
+.ban-co-the-thich-product-card:nth-child(3) { animation-delay: 0.3s; }
+.ban-co-the-thich-product-card:nth-child(4) { animation-delay: 0.4s; }
+.ban-co-the-thich-product-card:nth-child(5) { animation-delay: 0.5s; }
+.ban-co-the-thich-product-card:nth-child(6) { animation-delay: 0.6s; }
+.ban-co-the-thich-product-card:nth-child(7) { animation-delay: 0.7s; }
+.ban-co-the-thich-product-card:nth-child(8) { animation-delay: 0.8s; }
+.ban-co-the-thich-product-card:nth-child(9) { animation-delay: 0.9s; }

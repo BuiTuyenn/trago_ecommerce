@@ -1,0 +1,87 @@
+/* ========================================
+   CATEGORY ICONS COMPONENT
+   ======================================== */
+
+.category-icons-section {
+    margin-bottom: 2rem;
+}
+
+.category-icon-item {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 1rem 0.5rem;
+    border-radius: 8px;
+}
+
+.category-icon-item:hover {
+    transform: translateY(-4px);
+    background-color: rgba(37, 99, 235, 0.05);
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--trego-primary) 0%, var(--trego-primary-dark) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.75rem;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    transition: all 0.3s ease;
+}
+
+.category-icon-item:hover .icon-circle {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+.icon-circle i {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.category-text {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--trego-gray-700);
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .icon-circle {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .icon-circle i {
+        font-size: 1.3rem;
+    }
+    
+    .category-text {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .category-icon-item {
+        padding: 0.75rem 0.25rem;
+    }
+    
+    .icon-circle {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 0.5rem;
+    }
+    
+    .icon-circle i {
+        font-size: 1.2rem;
+    }
+    
+    .category-text {
+        font-size: 0.75rem;
+    }
+}
