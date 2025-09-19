@@ -5,17 +5,6 @@
 @section('content')
 <!-- Trego Homepage Layout - Modular Version -->
 <div class="trego-homepage">
-    <!-- Top Header Bar -->
-    <div class="top-header-bar">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 text-center py-2">
-                    <small class="text-white">🎉 Miễn phí vận chuyển cho đơn hàng từ 500.000đ | Hotline: 1900-xxxx</small>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Main Content Layout -->
     <div class="main-layout">
         <div class="container-fluid px-3">

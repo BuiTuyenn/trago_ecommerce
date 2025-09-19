@@ -1,157 +1,134 @@
-<!-- Footer Component -->
-<footer class="main-footer">
-    <div class="footer-content">
-        <div class="container">
-            <div class="row">
-                <!-- Company Information -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <h5 class="footer-heading">{{ config('app.name', 'E-Commerce') }}</h5>
-                    <p class="company-description">
-                        Hệ thống thương mại điện tử hiện đại với trải nghiệm mua sắm tuyệt vời. 
-                        Chúng tôi cung cấp hàng ngàn sản phẩm chất lượng cao với giá cả hợp lý 
-                        và dịch vụ khách hàng tận tâm.
-                    </p>
-                    
-                    <!-- Social Media Links -->
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
+<!-- Trego Footer (Tiki-style) -->
+<footer class="trego-footer bg-light">
+    <div class="container">
+        <div class="row py-5">
+            <!-- Hỗ trợ khách hàng -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h6 class="footer-title">Hỗ trợ khách hàng</h6>
+                <ul class="footer-links">
+                    <li><span class="hotline">Hotline: <strong>1900-6035</strong></span></li>
+                    <li><small class="text-muted">(1000 đ/phút, 8-21h kể cả T7, CN)</small></li>
+                    <li><a href="#">Các câu hỏi thường gặp</a></li>
+                    <li><a href="#">Gửi yêu cầu hỗ trợ</a></li>
+                    <li><a href="#">Hướng dẫn đặt hàng</a></li>
+                    <li><a href="#">Phương thức vận chuyển</a></li>
+                    <li><a href="#">Chính sách kiểm hàng</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Hướng dẫn trả góp</a></li>
+                </ul>
+                
+                <div class="mt-3">
+                    <p class="mb-1"><strong>Email hỗ trợ:</strong></p>
+                    <p class="mb-1"><a href="mailto:hotro@trego.vn" class="text-primary">hotro@trego.vn</a></p>
+                    <p class="mb-0"><a href="mailto:security@trego.vn" class="text-primary">security@trego.vn</a></p>
                 </div>
+            </div>
 
-                <!-- Quick Links -->
-                <div class="col-lg-2 col-md-6 mb-4">
-                    <h5 class="footer-heading">Liên kết nhanh</h5>
-                    <ul class="footer-links">
-                        <li><a href="{{ route('home') }}">Trang chủ</a></li>
-                        <li><a href="{{ route('products.index') }}">Sản phẩm</a></li>
-                        <li><a href="{{ route('categories.index') }}">Danh mục</a></li>
-                        <li><a href="#">Giới thiệu</a></li>
-                        <li><a href="#">Tin tức</a></li>
-                        <li><a href="#">Liên hệ</a></li>
-                    </ul>
-                </div>
-
-                <!-- Customer Support -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="footer-heading">Hỗ trợ khách hàng</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Hướng dẫn mua hàng</a></li>
-                        <li><a href="#">Chính sách đổi trả</a></li>
-                        <li><a href="#">Chính sách bảo hành</a></li>
-                        <li><a href="#">Phương thức thanh toán</a></li>
-                        <li><a href="#">Vận chuyển & Giao hàng</a></li>
-                        <li><a href="#">Câu hỏi thường gặp</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Information -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="footer-heading">Thông tin liên hệ</h5>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>123 Đường ABC, Quận 1, TP.HCM, Việt Nam</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+84 123 456 789</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>info@ecommerce.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <span>T2-T7: 8:00 - 22:00<br>CN: 9:00 - 21:00</span>
-                        </div>
-                    </div>
-
-                    <!-- Newsletter Signup -->
-                    <div class="newsletter-form">
-                        <h6 class="text-white mb-2">Đăng ký nhận tin</h6>
-                        <form action="#" method="POST">
-                            @csrf
-                            <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Nhập email của bạn..." required>
-                                <button class="btn" type="submit">
-                                    <i class="fas fa-paper-plane"></i>
-                                </button>
-                            </div>
-                        </form>
-                        <small class="text-muted d-block mt-2">
-                            Nhận thông tin khuyến mại và sản phẩm mới
-                        </small>
+            <!-- Về Trego -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h6 class="footer-title">Về Trego</h6>
+                <ul class="footer-links">
+                    <li><a href="#">Giới thiệu Trego</a></li>
+                    <li><a href="#">Trego Blog</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Chính sách bảo mật thanh toán</a></li>
+                    <li><a href="#">Chính sách bảo mật thông tin</a></li>
+                    <li><a href="#">Chính sách giải quyết khiếu nại</a></li>
+                    <li><a href="#">Điều khoản sử dụng</a></li>
+                    <li><a href="#">Giới thiệu Trego Xu</a></li>
+                    <li><a href="#">Tiếp thị liên kết cùng Trego</a></li>
+                    <li><a href="#">Bán hàng doanh nghiệp</a></li>
+                </ul>
+                
+                <div class="mt-4">
+                    <h6 class="footer-title">Chứng nhận bởi</h6>
+                    <div class="certificates">
+                        <img src="{{ asset('images/footer/certificates/bo-cong-thuong.svg') }}" alt="Bộ Công Thương" class="cert-img">
+                        <img src="{{ asset('images/footer/certificates/dmca.svg') }}" alt="DMCA" class="cert-img">
                     </div>
                 </div>
             </div>
 
-            <!-- Featured Categories -->
-            <div class="row mt-4 pt-4" style="border-top: 1px solid rgba(75, 85, 99, 0.3);">
-                <div class="col-12">
-                    <h6 class="footer-heading text-center mb-3">Danh mục nổi bật</h6>
-                    <div class="row">
-                        @php
-                            $footerCategories = \App\Models\Category::active()->parent()->take(6)->get();
-                        @endphp
-                        @foreach($footerCategories as $category)
-                            <div class="col-lg-2 col-md-4 col-6 mb-2">
-                                <a href="{{ route('products.category', $category->slug) }}" class="text-decoration-none">
-                                    <small class="text-muted hover-link">{{ $category->name }}</small>
-                                </a>
-                            </div>
-                        @endforeach
+            <!-- Phương thức thanh toán & Giao hàng -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h6 class="footer-title">Phương thức thanh toán</h6>
+                <div class="payment-methods mb-4">
+                    <div class="payment-row">
+                        <img src="{{ asset('images/footer/payments/trego.svg') }}" alt="Trego" class="payment-img">
+                        <img src="{{ asset('images/footer/payments/visa.svg') }}" alt="Visa" class="payment-img">
+                        <img src="{{ asset('images/footer/payments/mastercard.svg') }}" alt="Mastercard" class="payment-img">
+                        <img src="{{ asset('images/footer/payments/jcb.svg') }}" alt="JCB" class="payment-img">
                     </div>
+                    <div class="payment-row">
+                        <img src="{{ asset('images/footer/payments/atm.svg') }}" alt="ATM" class="payment-img">
+                        <img src="{{ asset('images/footer/payments/momo.svg') }}" alt="Momo" class="payment-img">
+                        <img src="{{ asset('images/footer/payments/zalopay.svg') }}" alt="ZaloPay" class="payment-img">
+                        <img src="{{ asset('images/footer/payments/vnpay.svg') }}" alt="VNPay" class="payment-img">
+                    </div>
+                </div>
+
+                <h6 class="footer-title">Dịch vụ giao hàng</h6>
+                <div class="delivery-service">
+                    <img src="{{ asset('images/footer/delivery/tregonow.svg') }}" alt="TregoNOW" class="delivery-img">
+                </div>
+                
+                <div class="mt-3">
+                    <ul class="footer-links">
+                        <li><a href="#">Quy chế hoạt động Sàn GĐTMĐT</a></li>
+                        <li><a href="#">Bán hàng cùng Trego</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Kết nối & Tải ứng dụng -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h6 class="footer-title">Kết nối với chúng tôi</h6>
+                <div class="social-links mb-4">
+                    <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-link zalo"><i class="fab fa-telegram"></i></a>
+                </div>
+
+                <h6 class="footer-title">Tải ứng dụng trên điện thoại</h6>
+                <div class="app-download mb-4">
+                    <div class="qr-code">
+                        <img src="{{ asset('images/footer/apps/qr-code.svg') }}" alt="QR Code" class="qr-img">
+                    </div>
+                    <div class="download-links">
+                        <a href="#" class="download-btn">
+                            <img src="{{ asset('images/footer/apps/app-store.svg') }}" alt="App Store" class="store-img">
+                        </a>
+                        <a href="#" class="download-btn">
+                            <img src="{{ asset('images/footer/apps/google-play.svg') }}" alt="Google Play" class="store-img">
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Newsletter Signup -->
+                <div class="newsletter-signup">
+                    <h6 class="footer-title">Đăng ký nhận tin khuyến mại</h6>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control form-control-sm" placeholder="Nhập email của bạn">
+                            <button class="btn btn-primary btn-sm" type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Footer Bottom -->
-    <div class="footer-bottom">
+    <div class="footer-bottom bg-white">
         <div class="container">
-            <div class="footer-bottom-content">
-                <div class="copyright">
-                    <p>&copy; {{ date('Y') }} {{ config('app.name', 'E-Commerce') }}. Tất cả quyền được bảo lưu.</p>
-                </div>
-                
-                <div class="footer-brand">
-                    <span>Được phát triển với</span>
-                    <i class="fas fa-heart"></i>
-                    <span>bởi Laravel & Bootstrap</span>
-                </div>
-                
-                <!-- Payment Methods -->
-                <div class="payment-methods">
-                    <small class="text-muted me-3">Phương thức thanh toán:</small>
-                    <div class="payment-method" title="Visa">
-                        <i class="fab fa-cc-visa"></i>
-                    </div>
-                    <div class="payment-method" title="Mastercard">
-                        <i class="fab fa-cc-mastercard"></i>
-                    </div>
-                    <div class="payment-method" title="PayPal">
-                        <i class="fab fa-cc-paypal"></i>
-                    </div>
-                    <div class="payment-method" title="VNPay">
-                        <span style="font-size: 0.7rem; font-weight: bold; color: #1976d2;">VNP</span>
-                    </div>
-                    <div class="payment-method" title="MoMo">
-                        <span style="font-size: 0.7rem; font-weight: bold; color: #d82d8b;">MoMo</span>
-                    </div>
+            <div class="py-4">
+                <div class="company-info">
+                    <h6 class="mb-3">Công ty TNHH TREGO</h6>
+                    <p class="mb-1">Chí minh, Hưng yên, Việt Nam</p>
+                    <p class="mb-1">Giấy chứng nhận đăng ký doanh nghiệp số 0123456789 do Sở Kế Hoạch và Đầu Tư Thành phố Hà Nội cấp lần đầu vào ngày 06/01/2025.</p>
+                    <p class="mb-0">Hotline: <a href="tel:19006035" class="text-primary">1900 6035</a></p>
                 </div>
             </div>
         </div>

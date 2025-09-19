@@ -6,8 +6,8 @@
             Danh mục sản phẩm
         </h6>
         <ul class="category-list">
-            <li><a href="#"><i class="fas fa-book"></i>Sách Trego</a></li>
-            <li><a href="#"><i class="fas fa-home"></i>Nhà Cửa - Đời Sống</a></li>
+            <li><a href="{{ route('products.books') }}"><i class="fas fa-book"></i>Sách Trego</a></li><!-- Updated route -->
+            <li><a href="{{ route('products.home-living') }}"><i class="fas fa-home"></i>Nhà Cửa - Đời Sống</a></li>
             <li><a href="#"><i class="fas fa-mobile-alt"></i>Điện Thoại - Máy Tính Bảng</a></li>
             <li><a href="#"><i class="fas fa-baby"></i>Đồ Chơi - Mẹ và Bé</a></li>
             <li><a href="#"><i class="fas fa-headphones"></i>Thiết Bị Số - Phụ Kiện Số</a></li>

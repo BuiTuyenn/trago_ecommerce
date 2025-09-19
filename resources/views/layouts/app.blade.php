@@ -41,13 +41,6 @@
             color: #1d4ed8;
         }
         
-        .footer-brand-text {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #ffffff;
-            letter-spacing: -0.02em;
-            font-family: 'Arial', sans-serif;
-        }
         
         .cart-count {
             position: absolute;
@@ -85,104 +78,14 @@
             border-color: #1d4ed8;
         }
         
-        .footer {
-            background-color: #1f2937;
-            color: #9ca3af;
-        }
-        
-        .footer h5 {
-            color: #f9fafb;
-        }
-        
-        .footer a {
-            color: #9ca3af;
-            text-decoration: none;
-        }
-        
-        .footer a:hover {
-            color: #f9fafb;
-        }
     </style>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="{{ route('home') }}">
-                <span class="brand-text-logo">TREGO</span>
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">Trang chủ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('products.index') }}">Sản phẩm</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('categories.index') }}">Danh mục</a>
-                    </li>
-                </ul>
-
-                <!-- Search Form -->
-                <form class="d-flex me-3" action="{{ route('products.search') }}" method="GET">
-                    <input class="form-control me-2" type="search" name="q" placeholder="Tìm kiếm sản phẩm..." value="{{ request('q') }}">
-                    <button class="btn btn-outline-primary" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
-
-                <ul class="navbar-nav">
-                    <!-- Cart -->
-                    <li class="nav-item">
-                        <a class="nav-link position-relative" href="{{ route('cart.index') }}">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="cart-count" id="cart-count">0</span>
-                        </a>
-                    </li>
-
-                    @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Đăng nhập</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Đăng ký</a>
-                        </li>
-                    @else
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                <i class="fas fa-user me-1"></i>
-                                {{ Auth::user()->full_name ?? Auth::user()->name }}
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{ route('profile') }}">Hồ sơ</a></li>
-                                <li><a class="dropdown-item" href="{{ route('orders.index') }}">Đơn hàng</a></li>
-                                @if(Auth::user()->role === 'admin')
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Quản trị</a></li>
-                                @endif
-                                <li><hr class="dropdown-divider"></li>
-                                <li>
-                                    <form action="{{ route('logout') }}" method="POST" class="d-inline">
-                                        @csrf
-                                        <button type="submit" class="dropdown-item">Đăng xuất</button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    @endguest
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Include Trego Header -->
+    @include('layouts.partials.header')
 
     <!-- Main Content -->
     <main class="py-4">
@@ -207,78 +110,16 @@
         @yield('content')
     </main>
 
-    <!-- Footer -->
-    <footer class="footer mt-5 py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="mb-3">
-                        <span class="footer-brand-text">TREGO</span>
-                    </div>
-                    <p>Hệ thống thương mại điện tử hiện đại với trải nghiệm mua sắm tuyệt vời.</p>
-                    <div class="social-links">
-                        <a href="#" class="me-3"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5>Liên kết nhanh</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="{{ route('home') }}">Trang chủ</a></li>
-                        <li><a href="{{ route('products.index') }}">Sản phẩm</a></li>
-                        <li><a href="{{ route('categories.index') }}">Danh mục</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5>Hỗ trợ khách hàng</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Liên hệ</a></li>
-                        <li><a href="#">Chính sách đổi trả</a></li>
-                        <li><a href="#">Hướng dẫn mua hàng</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5>Thông tin liên hệ</h5>
-                    <p><i class="fas fa-map-marker-alt me-2"></i> Địa chỉ: 123 Đường ABC, TP.HCM</p>
-                    <p><i class="fas fa-phone me-2"></i> Điện thoại: 0123-456-789</p>
-                    <p><i class="fas fa-envelope me-2"></i> Email: info@ecommerce.com</p>
-                </div>
-            </div>
-            <hr class="my-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>&copy; {{ date('Y') }} Trego. Tất cả quyền được bảo lưu.</p>
-                </div>
-                <div class="col-md-6 text-end">
-                    <p>Được phát triển với ❤️ bởi Trego Team</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Include Trego Footer -->
+    @include('layouts.partials.footer')
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- Cart count update script -->
+    <!-- Global JavaScript functions -->
     <script>
-        $(document).ready(function() {
-            updateCartCount();
-        });
-
-        function updateCartCount() {
-            $.get('{{ route("cart.count") }}', function(data) {
-                $('#cart-count').text(data.count);
-                if (data.count > 0) {
-                    $('#cart-count').show();
-                } else {
-                    $('#cart-count').hide();
-                }
-            });
-        }
-
         // Add to cart function
         function addToCart(productId, quantity = 1) {
             $.ajaxSetup({
@@ -292,7 +133,10 @@
                 quantity: quantity
             }, function(data) {
                 if (data.success) {
-                    updateCartCount();
+                    // Use the header's update function if available
+                    if (typeof updateCartCount === 'function') {
+                        updateCartCount();
+                    }
                     showAlert('success', data.message);
                 } else {
                     showAlert('error', data.message);

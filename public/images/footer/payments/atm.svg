@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 60 40">
+  <defs>
+    <linearGradient id="atmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#009639"/>
+      <stop offset="100%" style="stop-color:#007A2E"/>
+    </linearGradient>
+  </defs>
+  <rect width="60" height="40" fill="url(#atmGrad)" rx="6"/>
+  <rect x="0.5" y="0.5" width="59" height="39" fill="none" stroke="rgba(255,255,255,0.2)" rx="5.5"/>
+  
+  <!-- ATM Machine icon -->
+  <rect x="15" y="8" width="30" height="18" fill="rgba(255,255,255,0.9)" rx="2"/>
+  <rect x="17" y="10" width="26" height="10" fill="#009639" rx="1"/>
+  <rect x="19" y="22" width="22" height="2" fill="#ccc"/>
+  
+  <!-- Card slot -->
+  <rect x="25" y="24" width="10" height="1" fill="#666"/>
+  
+  <text x="30" y="33" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">ATM</text>
+  <text x="30" y="37" font-family="Arial, sans-serif" font-size="4" fill="rgba(255,255,255,0.8)" text-anchor="middle">NAPAS</text>
+</svg>

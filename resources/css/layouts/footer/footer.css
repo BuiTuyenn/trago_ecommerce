@@ -1,6 +1,285 @@
 /* ========================================
-   FOOTER STYLES
+   TREGO FOOTER STYLES (Tiki-inspired)
    ======================================== */
+
+/* Main Footer */
+.trego-footer {
+    background-color: #f5f5fa;
+    border-top: 1px solid #e5e7eb;
+}
+
+.footer-title {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 14px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #666;
+    text-decoration: none !important;
+    font-size: 13px;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #1976d2;
+}
+
+.hotline {
+    color: #333;
+    font-size: 13px;
+}
+
+/* Certificates */
+.certificates {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cert-img {
+    max-width: 90px;
+    height: 70px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    border: 1px solid #f0f0f0;
+}
+
+.cert-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Payment Methods */
+.payment-methods {
+    margin-bottom: 1.5rem;
+}
+
+.payment-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.payment-img {
+    width: 50px;
+    height: 32px;
+    object-fit: contain;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: white;
+    padding: 3px;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.payment-img:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Delivery Service */
+.delivery-service {
+    margin-top: 1rem;
+}
+
+.delivery-img {
+    max-width: 140px;
+    height: 45px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.delivery-img:hover {
+    transform: scale(1.05);
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+}
+
+.social-link.facebook {
+    background-color: #1877f2;
+    color: white;
+}
+
+.social-link.youtube {
+    background-color: #ff0000;
+    color: white;
+}
+
+.social-link.zalo {
+    background-color: #0084ff;
+    color: white;
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* App Download */
+.app-download {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.qr-code {
+    flex-shrink: 0;
+}
+
+.qr-img {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.download-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.download-btn {
+    text-decoration: none !important;
+}
+
+.store-img {
+    width: 130px;
+    height: 38px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+
+.store-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Newsletter Signup */
+.newsletter-signup {
+    margin-top: 1rem;
+}
+
+.newsletter-form .input-group {
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-form .form-control {
+    border: 1px solid #d1d5db;
+    border-right: none;
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+.newsletter-form .form-control:focus {
+    border-color: #3b82f6;
+    box-shadow: none;
+}
+
+.newsletter-form .btn {
+    border: 1px solid #3b82f6;
+    background-color: #3b82f6;
+    color: white;
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+.newsletter-form .btn:hover {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid #e5e7eb;
+}
+
+.company-info h6 {
+    color: #333;
+    font-weight: 600;
+}
+
+.company-info p {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+    .app-download {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .payment-row {
+        justify-content: flex-start;
+    }
+    
+    .payment-img {
+        width: 35px;
+        height: 22px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .trego-footer .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .certificates {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .cert-img {
+        max-width: 80px;
+    }
+    
+    .social-links {
+        justify-content: flex-start;
+    }
+    
+    .footer-title {
+        font-size: 15px;
+        margin-bottom: 0.75rem;
+    }
+}
 
 /* Main Footer Container */
 .main-footer {
@@ -99,7 +378,7 @@
 }
 
 .footer-links a:hover {
-    color: #f9fafb;
+    color: #000;
     transform: translateX(8px);
     text-shadow: 0 2px 8px rgba(249, 250, 251, 0.3);
 }

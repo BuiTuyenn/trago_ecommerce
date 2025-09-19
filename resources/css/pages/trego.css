@@ -81,8 +81,7 @@
 }
 
 .top-header-bar {
-    background: linear-gradient(135deg, var(--trego-primary) 0%, var(--trego-primary-dark) 100%);
-    color: var(--trego-white);
+    color: var(--trego-black);
     font-size: 0.875rem;
 }
 
@@ -466,6 +465,55 @@
 .add-to-cart-btn:hover {
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Custom Bootstrap Grid Overrides */
+@media (min-width: 992px) {
+    .col-lg-2 {
+        flex: 0 0 auto;
+        width: 10% !important;
+    }
+}
+
+/* Bootstrap Text Color Override */
+.text-white {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-black-rgb), var(--bs-text-opacity)) !important;
+}
+
+/* Remove underline from all links */
+a {
+    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+    text-decoration: none !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+a:focus {
+    text-decoration: none !important;
+}
+
+a:active {
+    text-decoration: none !important;
+}
+
+/* Remove underline from "Xem tất cả" links */
+.btn-link {
+    text-decoration: none !important;
+}
+
+.btn-link:hover {
+    text-decoration: none !important;
+}
+
+.btn-link:focus {
+    text-decoration: none !important;
+}
+
+.btn-link:active {
+    text-decoration: none !important;
 }
 
 /* Custom 5-column grid */

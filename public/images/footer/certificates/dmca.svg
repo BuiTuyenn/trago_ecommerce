@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="80" viewBox="0 0 100 80">
+  <defs>
+    <linearGradient id="dmcaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563EB"/>
+      <stop offset="100%" style="stop-color:#1D4ED8"/>
+    </linearGradient>
+    <filter id="dmcaShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="rgba(0,0,0,0.2)"/>
+    </filter>
+  </defs>
+  <rect width="100" height="80" fill="white" stroke="#e0e0e0" stroke-width="1" rx="4" filter="url(#dmcaShadow)"/>
+  
+  <!-- Header -->
+  <rect x="5" y="5" width="90" height="25" fill="url(#dmcaGrad)" rx="3"/>
+  
+  <!-- Shield icon -->
+  <path d="M 20 12 L 20 20 C 20 22 22 23 25 23 C 28 23 30 22 30 20 L 30 12 Z" fill="white"/>
+  <path d="M 22 14 L 28 14 M 22 16 L 28 16 M 22 18 L 28 18" stroke="#2563EB" stroke-width="0.5"/>
+  
+  <text x="50" y="16" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">DMCA</text>
+  <text x="70" y="16" font-family="Arial, sans-serif" font-size="5" fill="white" text-anchor="middle">PROTECTED</text>
+  <text x="50" y="26" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="middle">DIGITAL MILLENNIUM COPYRIGHT ACT</text>
+  
+  <!-- Content -->
+  <text x="50" y="40" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#333" text-anchor="middle">Bảo vệ bản quyền</text>
+  <text x="50" y="48" font-family="Arial, sans-serif" font-size="5" fill="#666" text-anchor="middle">Copyright Protection</text>
+  
+  <!-- Lock icon -->
+  <rect x="45" y="55" width="10" height="8" fill="none" stroke="#2563EB" stroke-width="1" rx="1"/>
+  <circle cx="50" cy="58" r="2" fill="none" stroke="#2563EB" stroke-width="1"/>
+  <rect x="49" y="60" width="2" height="2" fill="#2563EB"/>
+  
+  <text x="50" y="73" font-family="Arial, sans-serif" font-size="3" fill="#999" text-anchor="middle">dmca.com</text>
+</svg>

@@ -85,30 +85,6 @@
                             </p>
                         </div>
                     </form>
-
-                    <!-- Demo accounts info -->
-                    <div class="mt-4 p-3 bg-light rounded">
-                        <h6 class="text-muted mb-2">
-                            <i class="fas fa-info-circle me-1"></i>
-                            Tài khoản demo:
-                        </h6>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <small class="text-muted">
-                                    <strong>Admin:</strong><br>
-                                    admin@ecommerce.com<br>
-                                    password
-                                </small>
-                            </div>
-                            <div class="col-sm-6">
-                                <small class="text-muted">
-                                    <strong>Customer:</strong><br>
-                                    customer@example.com<br>
-                                    password
-                                </small>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

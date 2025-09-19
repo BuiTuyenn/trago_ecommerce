@@ -48,6 +48,37 @@ class CategoryController extends Controller
         return view('categories.show', compact('category', 'products', 'childCategories'));
     }
 
+    /**
+     * Display books page
+     */
+    public function showBooks()
+    {
+        $products = \App\Models\ProductsSach::where('status', 'active')
+            ->paginate(12);
+        
+        // Create a dummy category for breadcrumb
+        $category = (object) [
+            'name' => 'Sách Trego',
+            'slug' => 'sach-trego'
+        ];
+        
+        return view('categories.books', compact('category', 'products'));
+    }
+
+    public function showHomeLiving()
+    {
+        $products = \App\Models\ProductsNhaCua::where('status', 'active')
+            ->paginate(12);
+        
+        // Create a dummy category for breadcrumb
+        $category = (object) [
+            'name' => 'Nhà Cửa & Đời Sống',
+            'slug' => 'nha-cua-doi-song'
+        ];
+        
+        return view('categories.home-living', compact('category', 'products'));
+    }
+
     // Admin methods
 
     /**

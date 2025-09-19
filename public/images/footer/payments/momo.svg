@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 60 40">
+  <defs>
+    <linearGradient id="momoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#AE2070"/>
+      <stop offset="100%" style="stop-color:#8B1958"/>
+    </linearGradient>
+  </defs>
+  <rect width="60" height="40" fill="url(#momoGrad)" rx="6"/>
+  <rect x="0.5" y="0.5" width="59" height="39" fill="none" stroke="rgba(255,255,255,0.2)" rx="5.5"/>
+  
+  <!-- MoMo Icon (simplified wallet) -->
+  <rect x="20" y="8" width="20" height="14" fill="rgba(255,255,255,0.9)" rx="3"/>
+  <rect x="22" y="10" width="16" height="10" fill="#AE2070" rx="2"/>
+  <circle cx="30" cy="15" r="2" fill="white"/>
+  
+  <text x="30" y="30" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle">MoMo</text>
+  <text x="30" y="37" font-family="Arial, sans-serif" font-size="4" fill="rgba(255,255,255,0.8)" text-anchor="middle">Ví điện tử</text>
+</svg>

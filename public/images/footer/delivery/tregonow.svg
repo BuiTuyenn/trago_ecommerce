@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="50" viewBox="0 0 150 50">
+  <defs>
+    <linearGradient id="tregoNowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B35"/>
+      <stop offset="50%" style="stop-color:#F7931E"/>
+      <stop offset="100%" style="stop-color:#E85D04"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(255,107,53,0.4)"/>
+    </filter>
+  </defs>
+  <rect width="150" height="50" fill="url(#tregoNowGrad)" rx="8" filter="url(#glow)"/>
+  <rect x="1" y="1" width="148" height="48" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1" rx="7"/>
+  
+  <!-- Truck icon -->
+  <rect x="10" y="15" width="20" height="12" fill="white" rx="2"/>
+  <rect x="30" y="18" width="8" height="9" fill="white" rx="1"/>
+  <circle cx="18" cy="32" r="3" fill="white"/>
+  <circle cx="34" cy="32" r="3" fill="white"/>
+  <!-- Speed lines -->
+  <path d="M 40 16 L 45 16 M 40 20 L 43 20 M 40 24 L 44 24" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <text x="75" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">TregoNOW</text>
+  <text x="75" y="32" font-family="Arial, sans-serif" font-size="7" fill="rgba(255,255,255,0.9)">Giao hàng siêu tốc</text>
+  <text x="75" y="40" font-family="Arial, sans-serif" font-size="6" fill="rgba(255,255,255,0.8)">2 giờ có hàng</text>
+</svg>
