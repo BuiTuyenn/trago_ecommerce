@@ -214,7 +214,7 @@
                                         {{ Auth::user()->full_name ?? Auth::user()->name }}
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end">
-                                        <li><a class="dropdown-item" href="{{ route('profile') }}">Hồ sơ cá nhân</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('user.profile') }}">Hồ sơ cá nhân</a></li>
                                         <li><hr class="dropdown-divider"></li>
                                         <li>
                                             <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

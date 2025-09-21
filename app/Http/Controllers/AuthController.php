@@ -7,95 +7,119 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeMail;
+use App\Events\UserRegistered;
 
 class AuthController extends Controller
 {
     /**
-     * Show the login form
+     * Hiển thị form đăng ký
      */
-    public function showLoginForm()
+    public function showRegisterForm()
     {
-        if (Auth::check()) {
-            return redirect()->route('home');
-        }
-        
-        return view('auth.login');
-    }
-
-    /**
-     * Handle login request
-     */
-    public function login(Request $request)
-    {
-        $credentials = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required'
-        ]);
-
-        if (Auth::attempt($credentials, $request->boolean('remember'))) {
-            $request->session()->regenerate();
-            
-            // Update last login time
-            Auth::user()->update(['last_login_at' => now()]);
-            
-            return redirect()->intended(route('home'))
-                ->with('success', 'Đăng nhập thành công!');
-        }
-
-        return back()->withErrors([
-            'email' => 'Thông tin đăng nhập không chính xác.',
-        ])->onlyInput('email');
-    }
-
-    /**
-     * Show the registration form
-     */
-    public function showRegistrationForm()
-    {
-        if (Auth::check()) {
-            return redirect()->route('home');
-        }
-        
         return view('auth.register');
     }
 
     /**
-     * Handle registration request
+     * Xử lý đăng ký người dùng
      */
     public function register(Request $request)
     {
+        // Validate dữ liệu
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'first_name' => 'nullable|string|max:255',
-            'last_name' => 'nullable|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
-            'phone' => 'nullable|string|max:20',
+        ], [
+            'name.required' => 'Tên không được để trống',
+            'email.required' => 'Email không được để trống',
+            'email.email' => 'Email không đúng định dạng',
+            'email.unique' => 'Email đã tồn tại',
+            'password.required' => 'Mật khẩu không được để trống',
+            'password.min' => 'Mật khẩu phải có ít nhất 8 ký tự',
+            'password.confirmed' => 'Xác nhận mật khẩu không khớp',
         ]);
 
         if ($validator->fails()) {
-            return back()->withErrors($validator)->withInput();
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
         }
 
+        // Tạo user mới
         $user = User::create([
             'name' => $request->name,
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'phone' => $request->phone,
-            'role' => 'customer',
-            'is_active' => true,
+            'role' => 'customer', // Mặc định là customer
         ]);
 
+        // Gửi email xác thực
+        $user->sendEmailVerificationNotification();
+        
+        // Kích hoạt event để gửi email chào mừng
+        event(new UserRegistered($user));
+
+        // Đăng nhập ngay sau khi đăng ký
         Auth::login($user);
 
-        return redirect()->route('home')
-            ->with('success', 'Đăng ký thành công! Chào mừng bạn đến với ' . config('app.name'));
+        return redirect()->route('home')->with('success', 'Đăng ký thành công! Vui lòng kiểm tra email để xác thực tài khoản và email chào mừng.');
     }
 
     /**
-     * Handle logout request
+     * Hiển thị form đăng nhập
+     */
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }
+
+    /**
+     * Xử lý đăng nhập người dùng
+     */
+    public function login(Request $request)
+    {
+        // Validate dữ liệu
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required',
+        ], [
+            'email.required' => 'Email không được để trống',
+            'email.email' => 'Email không đúng định dạng',
+            'password.required' => 'Mật khẩu không được để trống',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $credentials = $request->only('email', 'password');
+        $remember = $request->has('remember');
+
+        if (Auth::attempt($credentials, $remember)) {
+            // Cập nhật thời gian đăng nhập cuối
+            Auth::user()->update(['last_login_at' => now()]);
+
+            $request->session()->regenerate();
+
+            // Kiểm tra role và điều hướng
+            if (Auth::user()->role === 'admin') {
+                return redirect()->intended(route('admin.dashboard'))->with('success', 'Đăng nhập thành công!');
+            }
+
+            return redirect()->intended(route('home'))->with('success', 'Đăng nhập thành công!');
+        }
+
+        return redirect()->back()
+            ->withErrors(['email' => 'Thông tin đăng nhập không chính xác'])
+            ->withInput($request->except('password'));
+    }
+
+    /**
+     * Xử lý đăng xuất người dùng
      */
     public function logout(Request $request)
     {
@@ -103,68 +127,7 @@ class AuthController extends Controller
         
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        
-        return redirect()->route('home')
-            ->with('success', 'Đăng xuất thành công!');
-    }
 
-    /**
-     * Show user profile
-     */
-    public function profile()
-    {
-        $user = Auth::user();
-        $orders = $user->orders()->latest()->take(5)->get();
-        
-        return view('auth.profile', compact('user', 'orders'));
-    }
-
-    /**
-     * Update user profile
-     */
-    public function updateProfile(Request $request)
-    {
-        $user = Auth::user();
-        
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'first_name' => 'nullable|string|max:255',
-            'last_name' => 'nullable|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
-            'phone' => 'nullable|string|max:20',
-            'date_of_birth' => 'nullable|date',
-            'gender' => 'nullable|in:male,female,other',
-            'current_password' => 'nullable|required_with:password',
-            'password' => 'nullable|string|min:8|confirmed',
-        ]);
-
-        if ($validator->fails()) {
-            return back()->withErrors($validator)->withInput();
-        }
-
-        // Check current password if new password is provided
-        if ($request->password) {
-            if (!Hash::check($request->current_password, $user->password)) {
-                return back()->withErrors(['current_password' => 'Mật khẩu hiện tại không chính xác.']);
-            }
-        }
-
-        $updateData = [
-            'name' => $request->name,
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'date_of_birth' => $request->date_of_birth,
-            'gender' => $request->gender,
-        ];
-
-        if ($request->password) {
-            $updateData['password'] = Hash::make($request->password);
-        }
-
-        $user->update($updateData);
-
-        return back()->with('success', 'Cập nhật hồ sơ thành công!');
+        return redirect()->route('home')->with('success', 'Đăng xuất thành công!');
     }
 }

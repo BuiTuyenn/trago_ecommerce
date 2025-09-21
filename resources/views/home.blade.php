@@ -324,4 +324,36 @@ document.addEventListener('DOMContentLoaded', function() {
     initAllCarousels();
 });
 </script>
+
+<style>
+/* Product Card Font Size Overrides - Home Page */
+.card-title,
+.product-title,
+.product-name,
+h5.card-title,
+.card-body .card-title,
+.card-body h5,
+.product-card-trego .product-name,
+.product-card-modern .product-title {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    font-weight: 600 !important;
+}
+
+.text-danger,
+.current-price,
+.original-price,
+.old-price,
+.price,
+.product-price,
+.text-muted,
+small,
+.rating-count,
+.stock-status,
+.price-section,
+.price-info {
+    font-size: 14px !important;
+}
+</style>
+
 @endsection

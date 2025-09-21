@@ -1,0 +1,182 @@
+/* ===================================
+   CONTAINER OVERRIDE - GLOBAL STYLES
+   Custom container sizing for entire website
+   =================================== */
+
+/* Override Bootstrap container classes */
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl,
+.container-fluid {
+    width: 100% !important;
+    min-width: 1280px !important;
+    max-width: 1440px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Ensure consistent spacing across all breakpoints */
+@media (min-width: 576px) {
+    .container,
+    .container-sm {
+        width: 100% !important;
+        min-width: 1280px !important;
+        max-width: 1440px !important;
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .container,
+    .container-sm,
+    .container-md {
+        width: 100% !important;
+        min-width: 1280px !important;
+        max-width: 1440px !important;
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .container,
+    .container-sm,
+    .container-md,
+    .container-lg {
+        width: 100% !important;
+        min-width: 1280px !important;
+        max-width: 1440px !important;
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container,
+    .container-sm,
+    .container-md,
+    .container-lg,
+    .container-xl {
+        width: 100% !important;
+        min-width: 1280px !important;
+        max-width: 1440px !important;
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container,
+    .container-sm,
+    .container-md,
+    .container-lg,
+    .container-xl,
+    .container-xxl {
+        width: 100% !important;
+        min-width: 1280px !important;
+        max-width: 1440px !important;
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+}
+
+/* Override any custom container classes that might exist */
+.main-container,
+.page-container,
+.content-container {
+    width: 100% !important;
+    min-width: 1280px !important;
+    max-width: 1440px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Category page containers - content without padding */
+.category-page .container:not(.category-header .container),
+.category-page .container-fluid:not(.category-header .container-fluid) {
+    width: 100% !important;
+    min-width: 1280px !important;
+    max-width: 1440px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Special handling for header and navbar containers */
+header .container,
+nav .container,
+.navbar .container,
+.navbar .container-fluid,
+.category-header .container {
+    width: 100% !important;
+    min-width: 1280px !important;
+    max-width: 1440px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+}
+
+/* Special handling for footer containers - custom sizing */
+footer .container,
+footer .container-sm,
+footer .container-md,
+footer .container-lg,
+footer .container-xl,
+footer .container-xxl,
+footer .container-fluid {
+    width: 1270px !important;
+    min-width: unset !important;
+    max-width: unset !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Ensure body doesn't have horizontal scroll on smaller screens */
+body {
+    min-width: 1280px !important;
+    overflow-x: auto !important;
+}
+
+/* Optional: Add smooth scrolling for better UX */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fix for any potential layout issues with the new container sizing */
+.row {
+    margin-left: -12px !important;
+    margin-right: -12px !important;
+}
+
+.col,
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6,
+.col-7, .col-8, .col-9, .col-10, .col-11, .col-12,
+.col-auto,
+.col-sm, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6,
+.col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12,
+.col-sm-auto,
+.col-md, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6,
+.col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12,
+.col-md-auto,
+.col-lg, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6,
+.col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12,
+.col-lg-auto,
+.col-xl, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6,
+.col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12,
+.col-xl-auto,
+.col-xxl, .col-xxl-1, .col-xxl-2, .col-xxl-3, .col-xxl-4, .col-xxl-5, .col-xxl-6,
+.col-xxl-7, .col-xxl-8, .col-xxl-9, .col-xxl-10, .col-xxl-11, .col-xxl-12,
+.col-xxl-auto {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+}

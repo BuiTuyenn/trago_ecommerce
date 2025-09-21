@@ -13,7 +13,7 @@
                     <i class="fas fa-cube"></i>
                 </div>
                 <div>
-                    <h3 class="mb-0">{{ \App\Models\Product::count() }}</h3>
+                    <h3 class="mb-0">{{ $stats['total_products'] }}</h3>
                     <small class="text-muted">Tổng sản phẩm</small>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                     <i class="fas fa-shopping-cart"></i>
                 </div>
                 <div>
-                    <h3 class="mb-0">{{ \App\Models\Order::count() }}</h3>
+                    <h3 class="mb-0">{{ $stats['total_orders'] }}</h3>
                     <small class="text-muted">Tổng đơn hàng</small>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                     <i class="fas fa-users"></i>
                 </div>
                 <div>
-                    <h3 class="mb-0">{{ \App\Models\User::customers()->count() }}</h3>
+                    <h3 class="mb-0">{{ $stats['total_customers'] }}</h3>
                     <small class="text-muted">Khách hàng</small>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                     <i class="fas fa-tags"></i>
                 </div>
                 <div>
-                    <h3 class="mb-0">{{ \App\Models\Category::count() }}</h3>
+                    <h3 class="mb-0">{{ $stats['total_categories'] }}</h3>
                     <small class="text-muted">Danh mục</small>
                 </div>
             </div>

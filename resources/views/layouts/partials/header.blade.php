@@ -50,7 +50,7 @@
                                 <span>Tài khoản</span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="{{ route('profile') }}">
+                                <li><a class="dropdown-item" href="{{ route('user.profile') }}">
                                     <i class="fas fa-user me-2"></i>Tài khoản của tôi
                                 </a></li>
                                 <li><a class="dropdown-item" href="{{ route('orders.index') }}">
@@ -96,7 +96,7 @@
                                 <i class="fas fa-user"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="{{ route('profile') }}">
+                                <li><a class="dropdown-item" href="{{ route('user.profile') }}">
                                     <i class="fas fa-user me-2"></i>Tài khoản của tôi
                                 </a></li>
                                 <li><a class="dropdown-item" href="{{ route('orders.index') }}">

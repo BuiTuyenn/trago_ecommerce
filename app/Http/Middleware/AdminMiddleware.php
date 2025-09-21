@@ -17,12 +17,20 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Auth::check() || Auth::user()->role !== 'admin') {
-            if ($request->expectsJson()) {
-                return response()->json(['message' => 'Unauthorized'], 403);
-            }
-            
-            abort(403, 'Access denied. Admin privileges required.');
+        // Kiểm tra xem user đã đăng nhập chưa
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'Vui lòng đăng nhập để tiếp tục.');
+        }
+
+        // Kiểm tra xem user có role admin không
+        if (Auth::user()->role !== 'admin') {
+            return redirect()->route('home')->with('error', 'Bạn không có quyền truy cập trang này.');
+        }
+
+        // Kiểm tra tài khoản có đang active không
+        if (!Auth::user()->is_active) {
+            Auth::logout();
+            return redirect()->route('login')->with('error', 'Tài khoản của bạn đã bị khóa.');
         }
 
         return $next($request);

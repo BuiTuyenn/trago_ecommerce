@@ -153,98 +153,16 @@
                 <div class="bookstore-main">
                     <h1 class="bookstore-title">{{ $category->name }}</h1>
                     
-                    <!-- Advanced Filter Bar -->
-                    <div class="advanced-filter-bar mb-4">
-                        <!-- Filter Tags Row -->
-                        <div class="filter-row">
-                            <div class="filter-section">
-                                <label class="filter-label">Bộ lọc:</label>
-                                <div class="filter-tags">
-                                    <button class="filter-btn active" data-filter="all">
-                                        <i class="fas fa-home"></i>
-                                        Tất cả sản phẩm
-                                    </button>
-                                    <button class="filter-btn" data-filter="bestseller">
-                                        <i class="fas fa-fire"></i>
-                                        Bán chạy
-                                    </button>
-                                    <button class="filter-btn" data-filter="featured">
-                                        <i class="fas fa-star"></i>
-                                        Nổi bật
-                                    </button>
-                                    <button class="filter-btn freeship-badge" data-filter="freeship">
-                                        <i class="fas fa-shipping-fast"></i>
-                                        FREESHIP
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Advanced Filters Row -->
-                        <div class="advanced-filters-row">
-                            <!-- Price Range Filter -->
-                            <div class="filter-group">
-                                <label class="filter-label">Khoảng giá:</label>
-                                <div class="price-filter">
-                                    <select class="price-select">
-                                        <option value="">Chọn mức giá</option>
-                                        <option value="0-500000">Dưới 500.000đ</option>
-                                        <option value="500000-1000000">500.000đ - 1.000.000đ</option>
-                                        <option value="1000000-2000000">1.000.000đ - 2.000.000đ</option>
-                                        <option value="2000000-5000000">2.000.000đ - 5.000.000đ</option>
-                                        <option value="5000000-999999999">Trên 5.000.000đ</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <!-- Brand Filter -->
-                            <div class="filter-group">
-                                <label class="filter-label">Thương hiệu:</label>
-                                <select class="brand-select">
-                                    <option value="">Tất cả thương hiệu</option>
-                                    <option value="IKEA">IKEA</option>
-                                    <option value="Hòa Phát">Hòa Phát</option>
-                                    <option value="Điện Máy Xanh">Điện Máy Xanh</option>
-                                    <option value="Sunhouse">Sunhouse</option>
-                                    <option value="Panasonic">Panasonic</option>
-                                    <option value="Samsung">Samsung</option>
-                                </select>
-                            </div>
-
-                            <!-- Material Filter -->
-                            <div class="filter-group">
-                                <label class="filter-label">Chất liệu:</label>
-                                <div class="material-filter">
-                                    <button class="mat-btn active" data-material="all">Tất cả</button>
-                                    <button class="mat-btn" data-material="wood">Gỗ</button>
-                                    <button class="mat-btn" data-material="metal">Kim loại</button>
-                                    <button class="mat-btn" data-material="plastic">Nhựa</button>
-                                </div>
-                            </div>
-                            
-                            <!-- Sort Options -->
-                            <div class="filter-group">
-                                <label class="filter-label">Sắp xếp:</label>
-                                <select class="sort-select">
-                                    <option value="popular">Phổ biến nhất</option>
-                                    <option value="newest">Mới nhất</option>
-                                    <option value="bestseller">Bán chạy nhất</option>
-                                    <option value="price_asc">Giá thấp → cao</option>
-                                    <option value="price_desc">Giá cao → thấp</option>
-                                    <option value="rating">Đánh giá cao</option>
-                                    <option value="discount">Giảm giá nhiều</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <!-- Filter Actions -->
-                        <div class="filter-actions">
-                            <button class="btn-reset-filter">
-                                <i class="fas fa-undo"></i>
-                                Xóa bộ lọc
-                            </button>
-                        </div>
-                    </div>
+                    <!-- Product Filter Component -->
+                    <x-product-filter 
+                        :action="route('categories.home-living')"
+                        headerTitle="Bộ lọc nhà cửa"
+                        headerBg="bg-warning"
+                        :resetRoute="route('categories.home-living')"
+                        :showQuickFilter="true"
+                        :enableAutoSubmit="true"
+                        :filterParams="['search', 'min_price', 'max_price', 'stock_status', 'product_type', 'price_range', 'rating', 'brand', 'sort']"
+                    />
 
                     <!-- Products Grid -->
                     <div class="products-grid">
@@ -252,8 +170,8 @@
                             <div class="product-card" data-featured="{{ $product->featured ? 'true' : 'false' }}" data-bestseller="{{ $product->bestseller ? 'true' : 'false' }}">
                                 <!-- Product Image -->
                                 <div class="product-image">
-                                    @if($product->images && is_array($product->images) && count($product->images) > 0)
-                                        <img src="{{ $product->images[0] }}" alt="{{ $product->name }}">
+                                    @if($product->images_array && count($product->images_array) > 0)
+                                        <img src="{{ asset('images/' . $product->images_array[0]) }}" alt="{{ $product->name }}">
                                     @else
                                         <div class="product-placeholder">
                                             <i class="fas fa-home"></i>

@@ -7,13 +7,9 @@ export default defineConfig({
             input: [
                 'resources/css/app.css', 
                 'resources/js/app.js',
-                        'resources/css/pages/categories/books.css',
-                        'resources/js/pages/categories/books.js',
-                        'resources/css/pages/categories/home-living.css',
-                        'resources/js/pages/categories/home-living.js',
-                        'resources/css/components/pagination/pagination.css',
-                        'resources/css/components/sidebar/sidebar.css',
-                        'resources/js/components/sidebar/sidebar.js'
+                'resources/css/components/pagination/pagination.css',
+                'resources/css/categories/category-master.css',
+                'resources/css/layouts/container-override.css'
             ],
             refresh: true,
         }),

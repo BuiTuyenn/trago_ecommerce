@@ -84,11 +84,28 @@
 .pagination-link.prev-btn,
 .pagination-link.next-btn {
     font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    min-width: 40px;
+    height: 40px;
 }
 
 .pagination-link.prev-btn i,
 .pagination-link.next-btn i {
-    font-size: 0.75rem;
+    font-size: 0.75rem !important;
+    width: auto !important;
+    height: auto !important;
+    line-height: 1 !important;
+}
+
+/* Override any FontAwesome size classes */
+.pagination-link i.fas,
+.pagination-link i.far,
+.pagination-link i.fab {
+    font-size: 0.75rem !important;
+    width: auto !important;
+    height: auto !important;
+    line-height: 1 !important;
+    vertical-align: baseline !important;
 }
 
 /* Responsive Design */
@@ -184,4 +201,72 @@
 .custom-pagination *::marker {
     content: none !important;
     display: none !important;
+}
+
+/* Force override Bootstrap and other CSS frameworks */
+.custom-pagination .pagination-link,
+.category-pagination .pagination-link {
+    font-size: 0.875rem !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    padding: 0.5rem 0.75rem !important;
+    line-height: 1.2 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.custom-pagination .pagination-link.prev-btn,
+.custom-pagination .pagination-link.next-btn,
+.category-pagination .pagination-link.prev-btn,
+.category-pagination .pagination-link.next-btn {
+    font-size: 0.75rem !important;
+    padding: 0.5rem 0.75rem !important;
+    min-width: 40px !important;
+    height: 40px !important;
+}
+
+.custom-pagination .pagination-link i,
+.category-pagination .pagination-link i {
+    font-size: 0.75rem !important;
+    width: auto !important;
+    height: auto !important;
+    line-height: 1 !important;
+    vertical-align: baseline !important;
+    margin: 0 !important;
+}
+
+/* Ensure no external CSS affects our pagination */
+.custom-pagination .pagination-link span,
+.category-pagination .pagination-link span {
+    font-size: inherit !important;
+    line-height: inherit !important;
+}
+
+/* Ultimate override for FontAwesome icons in pagination */
+nav.custom-pagination i.fas,
+nav.custom-pagination i.far,
+nav.custom-pagination i.fab,
+.category-pagination i.fas,
+.category-pagination i.far,
+.category-pagination i.fab {
+    font-size: 0.75rem !important;
+    width: auto !important;
+    height: auto !important;
+    line-height: 1 !important;
+    vertical-align: baseline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+    display: inline !important;
+}
+
+/* Ensure pagination container doesn't get affected */
+.category-pagination {
+    margin-top: 2rem !important;
+}
+
+.category-pagination .custom-pagination {
+    margin: 0 !important;
 }

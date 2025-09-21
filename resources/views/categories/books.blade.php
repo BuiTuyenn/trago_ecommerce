@@ -254,103 +254,16 @@
                 <div class="bookstore-main">
                     <h1 class="bookstore-title">Nhà Sách Trego</h1>
                     
-                    <!-- Advanced Filter Bar -->
-                    <div class="advanced-filter-bar mb-4">
-                        <!-- Filter Tags Row -->
-                        <div class="filter-row">
-                            <div class="filter-section">
-                                <label class="filter-label">Bộ lọc:</label>
-                                <div class="filter-tags">
-                                    <button class="filter-btn active" data-filter="all">
-                                        <i class="fas fa-list"></i>
-                                        Tất cả sản phẩm
-                                    </button>
-                                    <button class="filter-btn" data-filter="bestseller">
-                                        <i class="fas fa-fire"></i>
-                                        Bán chạy
-                                    </button>
-                                    <button class="filter-btn" data-filter="featured">
-                                        <i class="fas fa-star"></i>
-                                        Nổi bật
-                                    </button>
-                                    </button>
-                                    <button class="filter-btn freeship-badge" data-filter="freeship">
-                                        <i class="fas fa-shipping-fast"></i>
-                                        FREESHIP
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Advanced Filters Row -->
-                        <div class="advanced-filters-row">
-                            <!-- Price Range Filter -->
-                            <div class="filter-group">
-                                <label class="filter-label">Khoảng giá:</label>
-                                <div class="price-filter">
-                                    <select class="price-select">
-                                        <option value="">Chọn mức giá</option>
-                                        <option value="0-100000">Dưới 100.000đ</option>
-                                        <option value="100000-200000">100.000đ - 200.000đ</option>
-                                        <option value="200000-500000">200.000đ - 500.000đ</option>
-                                        <option value="500000-1000000">500.000đ - 1.000.000đ</option>
-                                        <option value="1000000-999999999">Trên 1.000.000đ</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <!-- Publisher Filter -->
-                            <div class="filter-group">
-                                <label class="filter-label">Nhà xuất bản:</label>
-                                <select class="publisher-select">
-                                    <option value="">Tất cả NXB</option>
-                                    <option value="NXB Tổng Hợp TPHCM">NXB Tổng Hợp TPHCM</option>
-                                    <option value="NXB Trẻ">NXB Trẻ</option>
-                                    <option value="Alpha Books">Alpha Books</option>
-                                    <option value="NXB Kim Đồng">NXB Kim Đồng</option>
-                                    <option value="First News">First News</option>
-                                </select>
-                            </div>
-
-                            <!-- Language Filter -->
-                            <div class="filter-group">
-                                <label class="filter-label">Ngôn ngữ:</label>
-                                <div class="language-filter">
-                                    <button class="lang-btn active" data-lang="all">Tất cả</button>
-                                    <button class="lang-btn" data-lang="vi">Tiếng Việt</button>
-                                    <button class="lang-btn" data-lang="en">English</button>
-                                </div>
-                            </div>
-                            <!-- Sort Options -->
-                            <div class="filter-group">
-                                <label class="filter-label">Sắp xếp:</label>
-                                <select class="sort-select">
-                                    <option value="popular">Phổ biến nhất</option>
-                                    <option value="newest">Mới nhất</option>
-                                    <option value="bestseller">Bán chạy nhất</option>
-                                    <option value="price_asc">Giá thấp → cao</option>
-                                    <option value="price_desc">Giá cao → thấp</option>
-                                    <option value="rating">Đánh giá cao</option>
-                                    <option value="discount">Giảm giá nhiều</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <!-- Filter Actions -->
-                        <div class="filter-actions">
-                            <button class="btn-reset-filter">
-                                <i class="fas fa-undo"></i>
-                                Xóa bộ lọc
-                            </button>
-                            <!-- <button class="btn-apply-filter">
-                                <i class="fas fa-search"></i>
-                                Áp dụng
-                            </button> -->
-                            <!-- <div class="results-count">
-                                <span class="count-number">{{ $products->total() }}</span> sản phẩm
-                            </div> -->
-                        </div>
-                    </div>
+                    <!-- Product Filter Component -->
+                    <x-product-filter 
+                        :action="route('categories.books')"
+                        headerTitle="Bộ lọc sách"
+                        headerBg="bg-info"
+                        :resetRoute="route('categories.books')"
+                        :showQuickFilter="true"
+                        :enableAutoSubmit="true"
+                        :filterParams="['search', 'min_price', 'max_price', 'stock_status', 'product_type', 'price_range', 'rating', 'brand', 'sort']"
+                    />
 
                     <!-- Products Grid -->
                     <div class="products-grid">
@@ -358,8 +271,8 @@
                             <div class="product-card">
                                 <!-- Product Image -->
                                 <div class="product-image">
-                                    @if($product->images && is_array($product->images) && count($product->images) > 0)
-                                        <img src="{{ $product->images[0] }}" alt="{{ $product->title }}">
+                                    @if($product->images_array && count($product->images_array) > 0)
+                                        <img src="{{ asset('images/' . $product->images_array[0]) }}" alt="{{ $product->name }}">
                                     @else
                                         <div class="product-placeholder">
                                             <i class="fas fa-book"></i>

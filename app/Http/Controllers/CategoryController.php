@@ -10,6 +10,14 @@ use Illuminate\Support\Str;
 class CategoryController extends Controller
 {
     /**
+     * Constructor - Apply middleware for admin methods
+     */
+    public function __construct()
+    {
+        $this->middleware('admin')->only(['create', 'store', 'edit', 'update', 'destroy']);
+    }
+
+    /**
      * Display a listing of categories
      */
     public function index()

@@ -20,6 +20,7 @@ class Product extends Model
         'stock_quantity',
         'manage_stock',
         'in_stock',
+        'image',
         'images',
         'weight',
         'dimensions',
@@ -61,6 +62,18 @@ class Product extends Model
     public function cartItems()
     {
         return $this->hasMany(CartItem::class);
+    }
+
+    // Relationship với wishlist
+    public function wishlistItems()
+    {
+        return $this->hasMany(Wishlist::class);
+    }
+
+    // Relationship với browse history
+    public function browseHistory()
+    {
+        return $this->hasMany(BrowseHistory::class);
     }
 
     // Scope cho active products

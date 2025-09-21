@@ -17,7 +17,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Vite CSS -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/css/layouts/container-override.css', 'resources/js/app.js'])
+    
+    <!-- Custom Theme CSS -->
+    <link rel="stylesheet" href="{{ asset('css/pages/trego.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/categories/category-common.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pages/products.css') }}">
 
     <!-- Custom CSS -->
     <style>
@@ -68,6 +73,65 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
         
+        /* Product Font Size Overrides - High Priority */
+        .product-title,
+        .product-name,
+        .card-title,
+        .product-card .product-title,
+        .product-card .product-name,
+        .product-card .card-title,
+        .product-card-modern .product-title,
+        .product-card-trego .product-name,
+        .card-body .card-title,
+        h5.card-title,
+        .card-title h5 {
+            font-size: 16px !important;
+            line-height: 1.4 !important;
+        }
+        
+        .product-price,
+        .current-price,
+        .original-price,
+        .old-price,
+        .product-category,
+        .product-category small,
+        .rating-count,
+        .stock-status,
+        .stock-status small,
+        .price-info,
+        .price-section,
+        .product-details,
+        .product-info .text-muted,
+        .product-card .text-muted,
+        .product-card small,
+        .card-body .text-muted,
+        .card-body small,
+        .price-wrap,
+        .price-wrap .current-price,
+        .price-wrap .original-price {
+            font-size: 14px !important;
+        }
+        
+        .form-select {
+            font-size: 14px !important;
+        }
+        
+        /* Bootstrap Card Specific Overrides */
+        .card .card-body h5,
+        .card .card-body .h5,
+        .card-body h5.card-title,
+        .card-body .card-title {
+            font-size: 16px !important;
+            font-weight: 600 !important;
+        }
+        
+        .card .card-body .text-danger,
+        .card .card-body .price,
+        .card-body .text-danger,
+        .card-body .price {
+            font-size: 14px !important;
+        }
+        
         .btn-primary {
             background-color: #2563eb;
             border-color: #2563eb;
@@ -76,6 +140,63 @@
         .btn-primary:hover {
             background-color: #1d4ed8;
             border-color: #1d4ed8;
+        }
+        
+        /* Remove gray background */
+        .category-page,
+        body,
+        html {
+            background-color: transparent !important;
+            background: transparent !important;
+        }
+        
+        /* Fix container alignment */
+        .category-header .container {
+            width: 100% !important;
+            min-width: 1280px !important;
+            max-width: 1440px !important;
+            padding-left: 24px !important;
+            padding-right: 24px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+        
+        /* Content container without padding */
+        .category-page .container:not(.category-header .container) {
+            width: 100% !important;
+            min-width: 1280px !important;
+            max-width: 1440px !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+        
+        /* Category header white theme */
+        .category-header {
+            background: white !important;
+            color: #333 !important;
+            border-bottom: 1px solid #e9ecef !important;
+        }
+        
+        .category-title {
+            font-size: 28px !important;
+            color: #333 !important;
+        }
+        
+        .category-description {
+            font-size: 14px !important;
+            color: #666 !important;
+        }
+        
+        .stat-item {
+            font-size: 14px !important;
+            color: #666 !important;
+        }
+        
+        .stat-item i {
+            font-size: 14px !important;
+            color: #007bff !important;
         }
         
     </style>
